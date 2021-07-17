@@ -9,6 +9,7 @@ class SoundcloudMe(SoundcloudClient):
         self.offset = None
         self.connection_id = None
         self.linked_partitioning = None
+        self.user_id = None
 
 
     def generate_queries(self):
@@ -32,3 +33,4 @@ class SoundcloudMe(SoundcloudClient):
         self.offset = None
         self.connection_id = None
         self.linked_partitioning = None
+        self.user_id = None

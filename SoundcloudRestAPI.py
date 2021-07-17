@@ -171,6 +171,14 @@ class MeRequests(SoundcloudClient):
 
         pprint(request)
 
+    def follow_user(self):
+
+        url = base_url + '/me/followings/{}'.format(self.client.SoundcloudMe.user_id)
+
+        request = requests.put(url,auth='OAuth {}'.format(self.access_token))
+
+        pprint(request)
+
 
 
 def main():
