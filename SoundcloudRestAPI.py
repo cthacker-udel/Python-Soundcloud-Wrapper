@@ -232,6 +232,14 @@ class SoundcloudSearch(SoundcloudClient):
 
         pprint(request)
 
+    def user_search(self):
+
+        url = base_url + '/users'
+
+        request = requests.get(url,auth='OAuth {}'.format(self.access_token),params=self.client.SoundcloudSearch.generate_queries())
+
+        pprint(request)
+
 
 
 def main():
