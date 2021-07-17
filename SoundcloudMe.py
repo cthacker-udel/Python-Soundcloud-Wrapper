@@ -8,6 +8,7 @@ class SoundcloudMe(SoundcloudClient):
         self.limit = None
         self.offset = None
         self.connection_id = None
+        self.linked_partitioning = None
 
 
     def generate_queries(self):
@@ -18,8 +19,10 @@ class SoundcloudMe(SoundcloudClient):
             body['acces'] = self.access
         if self.limit != None:
             body['limit'] = self.limit
-        if self.offest != None:
+        if self.offset != None:
             body['offset'] = self.offset
+        if self.linked_partitioning != None:
+            body['linked_partitioning'] = self.linked_partitioning
         return body
 
     def clear_queries(self):
@@ -28,3 +31,4 @@ class SoundcloudMe(SoundcloudClient):
         self.limit = None
         self.offset = None
         self.connection_id = None
+        self.linked_partitioning = None
