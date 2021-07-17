@@ -10,12 +10,15 @@ class SoundcloudMe(SoundcloudClient):
         self.connection_id = None
         self.linked_partitioning = None
         self.user_id = None
+        self.show_tracks = None
 
 
     def generate_queries(self):
 
         body = {}
 
+        if self.show_tracks != None:
+            body['show_tracks'] = self.show_tracks
         if len(self.access) > 0:
             body['acces'] = self.access
         if self.limit != None:
@@ -34,3 +37,4 @@ class SoundcloudMe(SoundcloudClient):
         self.connection_id = None
         self.linked_partitioning = None
         self.user_id = None
+        self.show_tracks = None
