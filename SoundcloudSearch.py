@@ -14,11 +14,14 @@ class SoundcloudSearch(SoundcloudClient):
         self.limit = None
         self.offset = None
         self.linked_partitioning = None
+        self.show_tracks = None
 
     def generate_queries(self):
 
         body = {}
 
+        if self.show_tracks != None:
+            body['show_tracks'] = self.show_tracks
         if self.q != None:
             body['q'] = self.q
         if len(self.ids) > 0:
@@ -56,3 +59,4 @@ class SoundcloudSearch(SoundcloudClient):
         self.limit = None
         self.offset = None
         self.linked_partitioning = None
+        self.show_tracks = None
