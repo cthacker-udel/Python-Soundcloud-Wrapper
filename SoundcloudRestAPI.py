@@ -262,6 +262,14 @@ class SoundcloudPlaylists(SoundcloudClient):
 
         pprint(request)
 
+    def update_playlist(self):
+
+        url = base_url + '/playlists/{}'.format(self.client.SoundcloudPlaylists.playlist_id)
+
+        request = requests.put(url,auth='OAuth {}'.format(self.access_token),body=self.client.SoundcloudPlaylists.generate_queries())
+
+        pprint(request)
+
 
 
 def main():
