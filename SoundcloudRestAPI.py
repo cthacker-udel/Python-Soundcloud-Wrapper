@@ -115,6 +115,14 @@ class MeRequests(SoundcloudClient):
 
         pprint(request)
 
+    def return_recent_track_activities(self):
+
+        url = base_url + '/me/activities/tracks'
+
+        request = requests.get(url,auth='OAuth {}'.format(self.access_token),params=self.SoundcloudMe.generate_queries())
+
+        pprint(request)
+
 
 
 def main():
