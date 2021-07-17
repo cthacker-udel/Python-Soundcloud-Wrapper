@@ -258,7 +258,7 @@ class SoundcloudPlaylists(SoundcloudClient):
 
         url = base_url + '/playlists/{}'.format(self.client.SoundcloudPlaylists.playlist_id)
 
-        request = requests.get(url,auth='OAuth {}'.format(self.access_token))
+        request = requests.get(url,auth='OAuth {}'.format(self.access_token),params=self.client.SoundcloudPlaylists.generate_queries())
 
         pprint(request)
 
