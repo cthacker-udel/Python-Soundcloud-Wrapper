@@ -95,7 +95,15 @@ class MeRequests(SoundcloudClient):
 
         url = base_url + '/me'
 
-        request = requests.post(url,auth='OAuth {}'.format(self.access_token))
+        request = requests.get(url,auth='OAuth {}'.format(self.access_token))
+
+        pprint(request)
+
+    def return_user_activities(self):
+
+        url = base_url + '/me/activities'
+
+        request = requests.get(url,auth='OAuth {}'.format(self.access_token),params=self.SoundcloudMe.generate_queries())
 
         pprint(request)
 
