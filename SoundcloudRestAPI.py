@@ -211,6 +211,19 @@ class MeRequests(SoundcloudClient):
 
         pprint(request)
 
+class SoundcloudSearch(SoundcloudClient):
+
+    def __init__(self,client):
+        self.client = client
+
+    def track_search(self):
+
+        url = base_url + '/tracks'
+
+        request = requests.get(url,auth='OAuth {}'.format(self.access_token),params=self.client.SoundcloudSearch.generate_queries())
+
+        pprint(request)
+
 
 
 def main():
