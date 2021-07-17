@@ -76,6 +76,12 @@ class OAuthRequests(SoundcloudClient):
 
         pprint(request)
 
+    def generate_auth(self):
+
+        str = 'OAuth {}'.format(self.access_token)
+
+        return str
+
 
 
 class MeRequests(SoundcloudClient):
@@ -86,6 +92,12 @@ class MeRequests(SoundcloudClient):
 
 
     def return_user_info(self):
+
+        url = base_url + '/me'
+
+        request = requests.post(url,auth='OAuth {}'.format(self.access_token))
+
+        pprint(request)
 
 
 

@@ -10,3 +10,4 @@ class SoundcloudClient():
         self.state = None
         self.client_secret = None
         self.code = None
+        self.access_token = None
