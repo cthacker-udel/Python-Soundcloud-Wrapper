@@ -6,6 +6,8 @@ class SoundcloudMe(SoundcloudClient):
 
         self.access = []
         self.limit = None
+        self.offset = None
+        self.connection_id = None
 
 
     def generate_queries(self):
@@ -16,9 +18,13 @@ class SoundcloudMe(SoundcloudClient):
             body['acces'] = self.access
         if self.limit != None:
             body['limit'] = self.limit
+        if self.offest != None:
+            body['offset'] = self.offset
         return body
 
     def clear_queries(self):
 
         self.access = []
         self.limit = None
+        self.offset = None
+        self.connection_id = None

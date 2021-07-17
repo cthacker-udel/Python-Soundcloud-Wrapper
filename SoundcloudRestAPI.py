@@ -103,7 +103,7 @@ class MeRequests(SoundcloudClient):
 
         url = base_url + '/me/activities'
 
-        request = requests.get(url,auth='OAuth {}'.format(self.access_token),params=self.SoundcloudMe.generate_queries())
+        request = requests.get(url,auth='OAuth {}'.format(self.access_token),params=self.client.SoundcloudMe.generate_queries())
 
         pprint(request)
 
@@ -111,7 +111,7 @@ class MeRequests(SoundcloudClient):
 
         url = base_url + '/me/activities/all/own'
 
-        request = requests.get(url,auth='OAuth {}'.format(self.access_token),params=self.SoundcloudMe.generate_queries())
+        request = requests.get(url,auth='OAuth {}'.format(self.access_token),params=self.client.SoundcloudMe.generate_queries())
 
         pprint(request)
 
@@ -119,7 +119,23 @@ class MeRequests(SoundcloudClient):
 
         url = base_url + '/me/activities/tracks'
 
-        request = requests.get(url,auth='OAuth {}'.format(self.access_token),params=self.SoundcloudMe.generate_queries())
+        request = requests.get(url,auth='OAuth {}'.format(self.access_token),params=self.client.SoundcloudMe.generate_queries())
+
+        pprint(request)
+
+    def list_user_connected_social_accounts(self):
+
+        url = base_url + '/me/connections'
+
+        request = requests.get(url,auth='OAuth {}'.format(self.access_token),params=self.client.SoundcloudMe.generate_queries())
+
+        pprint(request)
+
+    def get_users_connected_social_account(self):
+
+        url = base_url + '/me/connections/{}'.format(self.client.SoundcloudMe.connection_id)
+
+        request = requests.get(url,auth='OAuth {}'.format(self.access_token))
 
         pprint(request)
 
