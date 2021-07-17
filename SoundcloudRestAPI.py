@@ -179,6 +179,14 @@ class MeRequests(SoundcloudClient):
 
         pprint(request)
 
+    def delete_user(self):
+
+        url = base_url + '/me/followings/{}'.format(self.client.SoundcloudMe.user_id)
+
+        request = requests.delete(url,auth='OAuth {}'.format(self.access_token))
+
+        pprint(request)
+
 
 
 def main():
