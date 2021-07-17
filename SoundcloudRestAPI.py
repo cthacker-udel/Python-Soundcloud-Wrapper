@@ -240,6 +240,20 @@ class SoundcloudSearch(SoundcloudClient):
 
         pprint(request)
 
+class SoundcloudPlaylists(SoundcloudClient):
+
+    def __init__(self,client):
+        self.client = client
+
+
+    def create_playlist(self):
+
+        url = base_url + '/playlists'
+
+        request = requests.post(url,auth='OAuth {}'.format(self.access_token))
+
+        pprint(request)
+
 
 
 def main():
