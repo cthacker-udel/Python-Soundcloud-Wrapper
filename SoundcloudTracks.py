@@ -42,11 +42,18 @@ class SoundcloudTracks(SoundcloudClient):
         self.commentable = None
         self.isrc = None
 
+        self.limit = None
+        self.linked_partitioning = None
+
 
     def generate_queries(self):
 
         body = {}
 
+        if self.limit != None:
+            body['limit'] = self.limit
+        if self.linked_partitioning != None:
+            body['linked_partitioning'] = self.linked_partitioning
         if self.title != None:
             body['title'] = self.title
         if self.permalink != None:
@@ -157,3 +164,5 @@ class SoundcloudTracks(SoundcloudClient):
         self.license = None
         self.commentable = None
         self.isrc = None
+        self.limit = None
+        self.linked_partitioning = None
