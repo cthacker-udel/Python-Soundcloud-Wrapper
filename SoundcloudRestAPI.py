@@ -304,7 +304,15 @@ class SoundcloudTracks(SoundcloudClient):
 
         url = base_url + '/tracks'
 
-        request = requests.get(url,auth='OAuth {}'.format(self.access_token),params=self.client.SoundcloudPlaylists.generate_queries())
+        request = requests.get(url,auth='OAuth {}'.format(self.access_token),params=self.client.SoundcloudTracks.generate_queries())
+
+        pprint(request)
+
+    def get_track(self):
+
+        url = base_url + '/tracks/{}'.format(self.client.SoundcloudTracks.track_id)
+
+        request = requests.get(url,auth='OAuth {}'.format(self.access_token),params=self.client.SoundcloudTracks.generate_queries())
 
         pprint(request)
 

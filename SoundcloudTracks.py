@@ -22,11 +22,15 @@ class SoundcloudTracks(SoundcloudClient):
         self.commentable = None
         self.isrc = None
         self.artwork_data = None
+        self.secret_token = None
+        self.track_id = None
 
     def generate_queries(self):
 
         body = {}
 
+        if self.secret_token != None:
+            body['secret_token'] = self.secret_token
         if self.title != None:
             body['track[title]'] = self.title
         if self.asset_data != None:
@@ -85,3 +89,5 @@ class SoundcloudTracks(SoundcloudClient):
         self.commentable = None
         self.isrc = None
         self.artwork_data = None
+        self.secret_token = None
+        self.track_id = None
