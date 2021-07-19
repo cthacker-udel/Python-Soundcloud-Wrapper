@@ -11,12 +11,15 @@ class SoundcloudPlaylists(SoundcloudClient):
         self.description = None
         self.sharing = None
         self.tracks = []
+        self.linked_partitioning = None
 
 
     def generate_queries(self):
 
         body = {}
 
+        if self.linked_partitioning != None:
+            body['linked_partitioning'] = self.linked_partitioning
         if self.title != None:
             body['title'] = self.title
         if self.description != None:
@@ -35,6 +38,7 @@ class SoundcloudPlaylists(SoundcloudClient):
 
     def clear_queries(self):
 
+        self.linked_partitioning = None
         self.title = None
         self.description = None
         self.sharing = None
