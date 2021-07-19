@@ -372,6 +372,14 @@ class SoundcloudTracks(SoundcloudClient):
 
         pprint(request)
 
+    def get_related_tracks(self):
+
+        url = base_url + '/tracks/{}/related'.format(self.client.SoundcloudTracks.track_id)
+
+        request = requests.get(url,auth='OAuth {}'.format(self.access_token),params=self.client.SoundcloudTracks.generate_queries())
+
+        pprint(request)
+
 
 
 

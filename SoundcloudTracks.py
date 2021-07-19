@@ -45,11 +45,18 @@ class SoundcloudTracks(SoundcloudClient):
         self.limit = None
         self.linked_partitioning = None
 
+        self.access = []
+        self.offset = None
+
 
     def generate_queries(self):
 
         body = {}
 
+        if len(self.access) > 0:
+            body['access'] = self.access
+        if self.offset != None:
+            body['offset'] = self.offset
         if self.limit != None:
             body['limit'] = self.limit
         if self.linked_partitioning != None:
@@ -128,6 +135,8 @@ class SoundcloudTracks(SoundcloudClient):
 
     def clear_queries(self):
 
+        self.access = []
+        self.offset = None
         self.track_title = None
         self.track_asset_data = None
         self.track_permalink = None
