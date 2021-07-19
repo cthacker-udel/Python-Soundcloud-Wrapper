@@ -295,6 +295,22 @@ class SoundcloudPlaylists(SoundcloudClient):
         pprint(request)
 
 
+class SoundcloudTracks(SoundcloudClient):
+
+    def __init__(self,client):
+        self.client = client
+
+    def upload_track(self):
+
+        url = base_url + '/tracks'
+
+        request = requests.get(url,auth='OAuth {}'.format(self.access_token),params=self.client.SoundcloudPlaylists.generate_queries())
+
+        pprint(request)
+
+
+
+
 
 def main():
 
