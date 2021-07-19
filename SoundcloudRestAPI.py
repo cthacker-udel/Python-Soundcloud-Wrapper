@@ -324,6 +324,14 @@ class SoundcloudTracks(SoundcloudClient):
 
         pprint(request)
 
+    def delete_track(self):
+
+        url = base_url + '/tracks/{}'.format(self.client.SoundcloudTracks.track_id)
+
+        request = requests.delete(url,auth='OAuth {}'.format(self.access_token))
+
+        pprint(request)
+
 
 
 
