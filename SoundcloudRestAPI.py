@@ -286,6 +286,14 @@ class SoundcloudPlaylists(SoundcloudClient):
 
         pprint(request)
 
+    def get_playlist_reposters(self):
+
+        url = base_url + '/playlists/{}/reposters'.format(self.client.SoundcloudPlaylists.playlist_id)
+
+        request = requests.get(url,auth='OAuth {}'.format(self.access_token),params=self.client.SoundcloudPlaylists.generate_queries())
+
+        pprint(request)
+
 
 
 def main():
