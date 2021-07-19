@@ -348,6 +348,14 @@ class SoundcloudTracks(SoundcloudClient):
 
         pprint(request)
 
+    def get_track_new_comments(self):
+
+        url = base_url + '/tracks/{}/comments'.format(self.client.SoundcloudTracks.track_id)
+
+        request = requests.post(url,auth='OAuth {}'.format(self.access_token))
+
+        pprint(request)
+
 
 
 
