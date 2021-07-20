@@ -425,6 +425,13 @@ class SoundcloudUsers(SoundcloudClient):
 
         pprint(request)
 
+    def get_users_specific_following(self):
+
+        url = base_url + '/users/{}/followings/{}'.format(self.client.SoundcloudUsers.user_id,self.client.SoundcloudUsers.following_id)
+
+        request = requests.get(url,auth='OAuth {}'.format(self.access_token))
+
+        pprint(request)
 
 
 
