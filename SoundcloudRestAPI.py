@@ -393,6 +393,14 @@ class SoundcloudUsers(SoundcloudClient):
 
         pprint(request)
 
+    def get_users_comments(self):
+
+        url = base_url + '/users/{}/comments'.format(self.client.SoundcloudUsers.user_id)
+
+        request = requests.get(url,auth='OAuth {}'.foramt(self.acces_token),params=self.client.SoundcloudUsers.generate_queries())
+
+        pprint(request)
+
 
 
 
