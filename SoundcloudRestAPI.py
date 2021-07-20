@@ -433,6 +433,14 @@ class SoundcloudUsers(SoundcloudClient):
 
         pprint(request)
 
+    def get_users_playlists(self):
+
+        url = base_url + '/users/{}/playlists'.format(self.client.SoundcloudUsers.user_id)
+
+        request = requests.get(url,auth='OAuth {}'.format(self.access_token))
+
+        pprint(request)
+
 
 
 

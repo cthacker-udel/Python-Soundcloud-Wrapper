@@ -9,11 +9,17 @@ class SoundcloudUsers(SoundcloudClient):
         self.offset = None
         self.linked_partitioning = None
         self.following_id = None
+        self.access = []
+        self.show_tracks = None
 
     def generate_queries(self):
 
         body = {}
 
+        if len(self.access) > 0:
+            body['access'] = self.access
+        if self.show_tracks != None:
+            body['show_tracks'] = self.show_tracks
         if self.limit != None:
             body['limit'] = self.limit
         if self.offset != None:
@@ -30,3 +36,5 @@ class SoundcloudUsers(SoundcloudClient):
         self.user_id = None
         self.linked_partitioning = None
         self.following_id = None
+        self.access = []
+        self.show_tracks = None
