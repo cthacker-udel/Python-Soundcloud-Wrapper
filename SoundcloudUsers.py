@@ -7,6 +7,7 @@ class SoundcloudUsers(SoundcloudClient):
         self.user_id = None
         self.limit = None
         self.offset = None
+        self.linked_partitioning = None
 
     def generate_queries(self):
 
@@ -16,6 +17,8 @@ class SoundcloudUsers(SoundcloudClient):
             body['limit'] = self.limit
         if self.offset != None:
             body['offset'] = self.offset
+        if self.linked_partitioning != None:
+            body['linked_partitioning'] = self.linked_partitioning
         return body
 
 
@@ -24,3 +27,4 @@ class SoundcloudUsers(SoundcloudClient):
         self.limit = None
         self.offset = None
         self.user_id = None
+        self.linked_partitioning = None
