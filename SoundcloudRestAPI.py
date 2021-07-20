@@ -457,7 +457,7 @@ class SoundcloudUsers(SoundcloudClient):
 
         pprint(request)
 
-    def get_users_liked_tracks(self):
+    def get_users_liked_tracks_v2(self):
 
         url = base_url + '/users/{}/likes/tracks'.format(self.client.SoundcloudUsers.user_id)
 
