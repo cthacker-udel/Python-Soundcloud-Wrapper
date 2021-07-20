@@ -437,7 +437,15 @@ class SoundcloudUsers(SoundcloudClient):
 
         url = base_url + '/users/{}/playlists'.format(self.client.SoundcloudUsers.user_id)
 
-        request = requests.get(url,auth='OAuth {}'.format(self.access_token))
+        request = requests.get(url,auth='OAuth {}'.format(self.access_token),params=self.client.SoundcloudUsers.generate_queries())
+
+        pprint(request)
+
+    def get_users_tracks(self):
+
+        url = base_url + '/users/{}/tracks'.format(self.client.SoundcloudUsers.user_id)
+
+        request = requests.get(url,auth='OAuth {}'.format(self.access_token),params=self.client.SoundcloudUsers.generate_queries())
 
         pprint(request)
 
