@@ -549,6 +549,20 @@ class SoundcloudReposts(SoundcloudClient):
 
         pprint(request)
 
+class SoundcloudMisc(SoundcloudClient):
+
+    def __init__(self,client):
+
+        self.client = client
+
+    def resolve_soundcloudURL_to_resourceURL(self):
+
+        url = base_url + '/resolve'
+
+        request = requests.get(url,auth='OAuth {}'.format(self.access_token),params=self.client.SoundcloudMisc.generate_queries())
+
+        pprint(request)
+
 
 
 
