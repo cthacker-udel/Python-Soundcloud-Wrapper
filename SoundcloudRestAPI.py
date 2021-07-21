@@ -495,6 +495,14 @@ class SoundcloudLikes(SoundcloudClient):
 
         pprint(request)
 
+    def like_playlist(self):
+
+        url = base_url + '/likes/playlists/{}'.foramt(self.client.SoundcloudLikes.playlist_id)
+
+        request = requests.post(url,auth='OAuth {}'.format(self.access_token))
+
+        pprint(request)
+
 
 
 
