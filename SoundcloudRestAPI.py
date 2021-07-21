@@ -487,6 +487,14 @@ class SoundcloudLikes(SoundcloudClient):
 
         pprint(request)
 
+    def unlike_track(self):
+
+        url = base_url + '/likes/tracks/{}'.format(self.client.SoundcloudLikes.track_id)
+
+        request = requests.delete(url,auth='OAuth {}'.format(self.access_token))
+
+        pprint(request)
+
 
 
 
