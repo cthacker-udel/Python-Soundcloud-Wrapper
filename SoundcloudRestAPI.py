@@ -519,9 +519,17 @@ class SoundcloudReposts(SoundcloudClient):
 
     def repost_track(self):
 
-        url = base_url + '/reposts/tracks/{}'.format(self.client.SoundcloudLikes.track_id)
+        url = base_url + '/reposts/tracks/{}'.format(self.client.SoundcloudReposts.track_id)
 
         request = requests.post(url,auth='OAuth {}'.format(self.access_token))
+
+        pprint(request)
+
+    def remove_reposted_track(self):
+
+        url = base_url + '/reposts/tracks/{}'.format(self.client.SoundcloudReposts.track_id)
+
+        request = requests.delete(url,auth='OAuth {}'.format(self.access_token))
 
         pprint(request)
 
