@@ -541,6 +541,14 @@ class SoundcloudReposts(SoundcloudClient):
 
         pprint(request)
 
+    def remove_reposted_playlist(self):
+
+        url = base_url + '/reposts/playlists/{}'.format(self.client.SoundcloudReposts.playlist_id)
+
+        request = requests.delete(url,auth='OAuth {}'.format(self.access_token))
+
+        pprint(request)
+
 
 
 
