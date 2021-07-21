@@ -512,6 +512,20 @@ class SoundcloudLikes(SoundcloudClient):
         pprint(request)
 
 
+class SoundcloudReposts(SoundcloudClient):
+
+    def __init__(self,client):
+        self.client = client
+
+    def repost_track(self):
+
+        url = base_url + '/reposts/tracks/{}'.format(self.client.SoundcloudLikes.track_id)
+
+        request = requests.post(url,auth='OAuth {}'.format(self.access_token))
+
+        pprint(request)
+
+
 
 
 
