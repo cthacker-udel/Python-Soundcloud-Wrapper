@@ -533,6 +533,14 @@ class SoundcloudReposts(SoundcloudClient):
 
         pprint(request)
 
+    def repost_playlist(self):
+
+        url = base_url + '/reposts/playlists/{}'.format(self.client.SoundcloudReposts.playlist_id)
+
+        request = requests.post(url,auth='OAuth {}'.format(self.access_token))
+
+        pprint(request)
+
 
 
 
